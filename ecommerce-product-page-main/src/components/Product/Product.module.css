@@ -136,9 +136,6 @@ width: 100%;
     /* Figure out how to change color here */
 }
 
-.add__to__cart::before {
-    filter: invert(10%);
-}
 
 @media (min-width: 860px) {
     .wrapper {
