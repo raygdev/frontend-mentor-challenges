@@ -144,6 +144,7 @@ width: 100%;
         margin: 0 auto;
         align-items: center;
         justify-content: space-between;
+        padding-top: 2em;
     }
 
     .product__image__wrapper {
