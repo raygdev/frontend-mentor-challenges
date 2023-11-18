@@ -1,0 +1,27 @@
+@import "../../index.css";
+
+.cart {
+    position: relative;
+}
+
+.cart__badge {
+    border-radius: 40%;
+    padding: 0 .75em 0 .75em;
+    position: absolute;
+    transform: translate(20px,-45px);
+    background-color: var(--orange);
+    width: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+}
+
+.cart__icon {
+    width: 2.1875rem;
+}
+
+.cart__icon:hover {
+    cursor: pointer;
+}

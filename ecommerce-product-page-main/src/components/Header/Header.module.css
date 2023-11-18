@@ -1,0 +1,46 @@
+@import "../../index.css";
+
+.header {
+    background-color: var(--white);
+    display: flex;
+    position: relative;
+    padding: 1.5em 0 ;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu__icon {
+    display:block;
+    width: 100%;
+}
+
+.menu__button {
+    border: none;
+    background-color: transparent;
+    width: 1.5rem;
+    height: 1.25rem;
+    padding: 0;
+    align-self: baseline;
+}
+
+.logo__wrapper,
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: baseline; 
+}
+
+.wrapper {
+    gap: 1.5em;
+}
+
+.logo__wrapper {
+    gap: .75em;
+    padding-left: .5em;
+}
+
+.logo__heading {
+    font-size: 2.5rem;
+    margin: 0;
+    align-self:baseline;
+}
