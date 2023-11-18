@@ -43,3 +43,10 @@
     margin: 0;
     align-self:baseline;
 }
+
+@media (min-width: 860px) {
+    .header {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
