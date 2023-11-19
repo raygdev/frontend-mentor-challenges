@@ -1,14 +1,8 @@
 @import "../../index.css";
 
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    width: 2.1875rem;
-}
 
 .avatar {
-    width: 100%;
+    width: 2.1875em;
     display: block;
     border: 2px solid var(--orange);
     border-radius: 50%;
