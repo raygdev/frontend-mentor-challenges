@@ -12,7 +12,7 @@ function Product(props) {
         images
     } = props.data
   return (
-    <div className={styles.wrapper}>
+    <main className={styles.wrapper}>
         <div className={styles.product__image__wrapper}>
             <img className={styles.product__image} src={images[0][0]} alt="product image" />
         </div>
@@ -36,7 +36,7 @@ function Product(props) {
                 <button className={styles.add__to__cart}>Add To Cart</button>
             </div>
         </div>
-    </div>
+    </main>
   )
 }
 
