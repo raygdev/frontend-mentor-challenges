@@ -141,10 +141,10 @@ width: 100%;
     .wrapper {
         flex-direction: row;
         max-width: 1200px;
-        margin: 0 auto;
+        margin: 2em auto 0 auto;
         align-items: center;
         justify-content: space-between;
-        padding-top: 2em;
+        padding-top: 3rem;
     }
 
     .product__image__wrapper {
