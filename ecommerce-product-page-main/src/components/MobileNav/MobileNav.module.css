@@ -56,3 +56,29 @@
     opacity: 1;
 }
 
+@media (min-width:860px) {
+    .nav__wrapper {
+        position:static;
+        width: auto;
+        height: auto;
+    }
+
+    .navlist {
+        flex-direction: row;
+    }
+
+    .nav img {
+        display: none;
+    }
+
+    .nav {
+        padding: 0;
+        color: var(--dark-grayish-blue);
+    }
+
+    .hide {
+        transform: none;
+        opacity: 1;
+    }
+}
+
