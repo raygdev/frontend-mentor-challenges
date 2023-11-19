@@ -49,4 +49,8 @@
         max-width: 1200px;
         margin: 0 auto;
     }
+
+    .menu__icon {
+        display: none;
+    }
 }
