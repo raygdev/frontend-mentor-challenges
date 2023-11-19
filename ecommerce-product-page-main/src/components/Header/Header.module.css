@@ -5,7 +5,7 @@
     padding: 1.5em .5em 1.5em 0 ;
     justify-content: space-between;
     align-items: center;
-    box-shadow: -2px 7px 12px -12px var(--dark-grayish-blue), -2px 6px 12px -12px var(--dark-grayish-blue);
+    box-shadow: -2px 6px 6px -9px var(--dark-grayish-blue);
 }
 
 .menu__icon {
