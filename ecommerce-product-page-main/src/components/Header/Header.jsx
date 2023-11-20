@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./Header.module.css"
 import MobileNav from '../MobileNav/MobileNav'
 import menu from "../../images/icon-menu.svg"
@@ -8,6 +8,18 @@ import Avatar from '../Avatar/Avatar'
 
 function Header(props) {
     const [close, setClose] = useState(true)
+
+    useEffect(() => {
+      const handleResize = () => {
+        (window.innerWidth > 860) ? setClose(false) : setClose(true)
+      }
+      
+      window.addEventListener("resize", handleResize)
+
+      return () => {
+        window.removeEventListener("resize", handleResize)
+      }
+    },[])
 
     function toggleClose () {
         setClose(prevClose => !prevClose)
