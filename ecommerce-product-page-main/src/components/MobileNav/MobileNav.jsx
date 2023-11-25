@@ -25,6 +25,7 @@ function MobileNav(props) {
         <button
           className={styles.close__btn}
           onClick={props.toggleClose}
+          tabIndex={props.close ? -1 : 0}
         >
           <img src={closeIcon} alt="close icon" />
         </button>
