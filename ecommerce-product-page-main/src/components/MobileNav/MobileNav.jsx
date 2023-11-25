@@ -13,7 +13,9 @@ function MobileNav(props) {
       }`}
     >
       <nav aria-hidden={props.close} className={`${styles.nav} mobile `}>
-        <img onClick={props.toggleClose} src={closeIcon} alt="close icon" />
+        <button onClick={props.toggleClose}>
+          <img src={closeIcon} alt="close icon" />
+        </button>
         <ul className={styles.navlist}>
           <li className={styles.navlist__item}>
             <a tabIndex={index} href="#">
