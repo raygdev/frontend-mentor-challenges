@@ -19,21 +19,23 @@ function Header(props) {
     setClose(prevClose => !prevClose)
   }
 
-    useEffect(() => {
-      const handleResize = () => {
-        (window.innerWidth > 860) ? setClose(false) : setClose(true)
-      }
-      
-      window.addEventListener("resize", handleResize)
-
-      return () => {
-        window.removeEventListener("resize", handleResize)
-      }
-    },[])
-
-    function toggleClose () {
-        setClose(prevClose => !prevClose)
+  useEffect(() => {
+    const handleResize = () => {
+      window.innerWidth > 860
+        ? setClose(false)
+        : setClose(true)
     }
+
+    window.addEventListener("resize", handleResize)
+
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
+
+  function toggleClose() {
+    setClose(prevClose => !prevClose)
+  }
 
   return (
     <header className={styles.header}>
