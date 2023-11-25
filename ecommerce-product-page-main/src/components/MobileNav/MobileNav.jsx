@@ -4,6 +4,9 @@ import styles from "./MobileNav.module.css"
 
 function MobileNav(props) {
   const index = props.close ? -1 : 0
+  function toggle(e) {
+    e.key === "Escape" && !props.close && props.toggleClose()
+  }
   return (
     <div
       id="navigation"
@@ -11,6 +14,7 @@ function MobileNav(props) {
       className={`${styles.nav__wrapper} ${
         props.close ? styles.hide : styles.show
       }`}
+      onKeyDown={toggle}
     >
       <nav aria-hidden={props.close} className={`${styles.nav} mobile `}>
         <button className={styles.close__btn} onClick={props.toggleClose}>
