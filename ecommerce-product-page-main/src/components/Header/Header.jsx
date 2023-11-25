@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react"
 import styles from "./Header.module.css"
 import MobileNav from "../MobileNav/MobileNav"
@@ -17,6 +18,23 @@ function Header(props) {
   function toggleClose() {
     setClose(prevClose => !prevClose)
   }
+
+    useEffect(() => {
+      const handleResize = () => {
+        (window.innerWidth > 860) ? setClose(false) : setClose(true)
+      }
+      
+      window.addEventListener("resize", handleResize)
+
+      return () => {
+        window.removeEventListener("resize", handleResize)
+      }
+    },[])
+
+    function toggleClose () {
+        setClose(prevClose => !prevClose)
+    }
+
   return (
     <header className={styles.header}>
       <div className={styles.logo__wrapper}>
