@@ -21,6 +21,8 @@ function Header(props) {
     <header className={styles.header}>
       <div className={styles.logo__wrapper}>
         <button
+          aria-expanded={!close}
+          aria-controls="navigation"
           onClick={toggleClose}
           className={styles.menu__button}
           aria-label="open menu"
