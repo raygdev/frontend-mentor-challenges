@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from "react"
 import styles from "./Header.module.css"
 import MobileNav from "../MobileNav/MobileNav"
 import menu from "../../images/icon-menu.svg"
@@ -8,6 +8,11 @@ import Avatar from "../Avatar/Avatar"
 
 function Header(props) {
   const [close, setClose] = useState(true)
+
+  useEffect(() => {
+    let letScroll = close ? "scroll" : "hidden"
+    document.body.style.overflow = letScroll
+  }, [close])
 
   function toggleClose() {
     setClose(prevClose => !prevClose)
