@@ -6,6 +6,8 @@ function MobileNav(props) {
   const index = props.close ? -1 : 0
   return (
     <div
+      id="navigation"
+      aria-hidden={props.close}
       className={`${styles.nav__wrapper} ${
         props.close ? styles.hide : styles.show
       }`}
