@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useEffect, useRef, useState } from "react"
 import closeIcon from "../../images/icon-close.svg"
 import styles from "./MobileNav.module.css"
 
 function MobileNav(props) {
+  const navRef = useRef(null)
   const index = props.close ? -1 : 0
   function toggle(e) {
     e.key === "Escape" && !props.close && props.toggleClose()
@@ -16,8 +17,15 @@ function MobileNav(props) {
       }`}
       onKeyDown={toggle}
     >
-      <nav aria-hidden={props.close} className={`${styles.nav} mobile `}>
-        <button className={styles.close__btn} onClick={props.toggleClose}>
+      <nav
+        ref={navRef}
+        aria-hidden={props.close}
+        className={`${styles.nav} mobile `}
+      >
+        <button
+          className={styles.close__btn}
+          onClick={props.toggleClose}
+        >
           <img src={closeIcon} alt="close icon" />
         </button>
         <ul className={styles.navlist}>
