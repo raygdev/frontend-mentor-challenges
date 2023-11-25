@@ -21,7 +21,7 @@ function Header(props) {
   useEffect(() => {
     const handleResize = () => {
       window.innerWidth > 860
-        ? setClose(false)
+        ? (setClose(false), (document.body.style.overflow = "auto"))
         : setClose(true)
     }
 
