@@ -1,12 +1,18 @@
-import React from "react"
+import React, { useEffect, useRef, useState } from "react"
 import closeIcon from "../../images/icon-close.svg"
 import styles from "./MobileNav.module.css"
+import { useFocusNav } from "../../hooks/useFocusNav"
+
 
 function MobileNav(props) {
+  const navRef = useRef(null)
+  /**
+   * useFocusNav is not really being used here. It is only
+   * meant to clean up the large useEffect that is attaching
+   * and removing event listeners. Suggestions?
+   */
+  const focus = useFocusNav(navRef, props.close)
   const index = props.close ? -1 : 0
-  function toggle(e) {
-    e.key === "Escape" && !props.close && props.toggleClose()
-  }
   return (
     <div
       id="navigation"
@@ -14,10 +20,17 @@ function MobileNav(props) {
       className={`${styles.nav__wrapper} ${
         props.close ? styles.hide : styles.show
       }`}
-      onKeyDown={toggle}
     >
-      <nav aria-hidden={props.close} className={`${styles.nav} mobile `}>
-        <button className={styles.close__btn} onClick={props.toggleClose}>
+      <nav
+        ref={navRef}
+        aria-hidden={props.close}
+        className={`${styles.nav} mobile `}
+      >
+        <button
+          className={styles.close__btn}
+          onClick={props.toggleClose}
+          tabIndex={props.close ? -1 : 0}
+        >
           <img src={closeIcon} alt="close icon" />
         </button>
         <ul className={styles.navlist}>

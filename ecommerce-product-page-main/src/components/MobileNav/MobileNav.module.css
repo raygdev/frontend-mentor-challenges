@@ -86,5 +86,9 @@
         transform: none;
         opacity: 1;
     }
+
+    .close__btn {
+        display: none;
+    }
 }
 
