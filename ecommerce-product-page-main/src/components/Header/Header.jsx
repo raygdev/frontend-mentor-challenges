@@ -16,6 +16,10 @@ function Header(props) {
   }, [close])
 
   useEffect(() => {
+    if(window.innerWidth >= 860) {
+      setClose(false)
+    }
+
     const handleResize = () => {
       window.innerWidth > 860
         ? (setClose(false), (document.body.style.overflow = "auto"))
