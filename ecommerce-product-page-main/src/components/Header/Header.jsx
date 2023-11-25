@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import styles from "./Header.module.css"
 import MobileNav from "../MobileNav/MobileNav"
 import menu from "../../images/icon-menu.svg"
@@ -8,6 +8,7 @@ import Avatar from "../Avatar/Avatar"
 
 function Header(props) {
   const [close, setClose] = useState(true)
+  const buttonRef = useRef(null)
 
   useEffect(() => {
     let letScroll = close ? "scroll" : "hidden"
@@ -29,7 +30,14 @@ function Header(props) {
   }, [])
 
   function toggleClose() {
-    setClose(prevClose => !prevClose)
+    setClose(prevClose => {
+      if(!prevClose) {
+        buttonRef.current.focus()
+        return !prevClose
+      } 
+
+      return !prevClose
+    })
   }
 
   return (
@@ -41,6 +49,7 @@ function Header(props) {
           onClick={toggleClose}
           className={styles.menu__button}
           aria-label="open menu"
+          ref={buttonRef}
         >
           <img src={menu} className={styles.menu__icon} alt="open menu" />
         </button>
