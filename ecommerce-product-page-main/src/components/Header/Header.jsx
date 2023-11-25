@@ -11,14 +11,12 @@ function Header(props) {
   const buttonRef = useRef(null)
 
   useEffect(() => {
-    if(window.innerWidth >= 860) {
+    if (window.innerWidth >= 860) {
       setClose(false)
     }
 
     const handleResize = () => {
-      window.innerWidth >= 860
-        ? setClose(false)
-        : setClose(true)
+      window.innerWidth >= 860 ? setClose(false) : setClose(true)
     }
 
     window.addEventListener("resize", handleResize)
@@ -30,10 +28,10 @@ function Header(props) {
 
   function toggleClose() {
     setClose(prevClose => {
-      if(!prevClose) {
+      if (!prevClose) {
         buttonRef.current.focus()
         return !prevClose
-      } 
+      }
 
       return !prevClose
     })
