@@ -14,10 +14,6 @@ function Header(props) {
     document.body.style.overflow = letScroll
   }, [close])
 
-  function toggleClose() {
-    setClose(prevClose => !prevClose)
-  }
-
   useEffect(() => {
     const handleResize = () => {
       window.innerWidth > 860
