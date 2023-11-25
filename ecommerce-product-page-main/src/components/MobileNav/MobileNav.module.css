@@ -40,6 +40,11 @@
     outline: none;
 }
 
+.close__btn {
+    border: none;
+    background: inherit;
+}
+
 
 
 
