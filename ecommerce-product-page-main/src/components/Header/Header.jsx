@@ -12,7 +12,7 @@ function Header(props) {
 
   useEffect(() => {
     let letScroll = close ? "scroll" : "hidden"
-    document.body.style.overflow = letScroll
+    document.body.style.overflow = window.innerWidth < 860 ? letScroll : "auto"
   }, [close])
 
   useEffect(() => {
@@ -21,8 +21,8 @@ function Header(props) {
     }
 
     const handleResize = () => {
-      window.innerWidth > 860
-        ? (setClose(false), (document.body.style.overflow = "auto"))
+      window.innerWidth >= 860
+        ? setClose(false)
         : setClose(true)
     }
 
