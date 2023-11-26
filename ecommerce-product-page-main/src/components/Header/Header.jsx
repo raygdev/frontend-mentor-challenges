@@ -11,19 +11,18 @@ function Header(props) {
   const buttonRef = useRef(null)
 
   useEffect(() => {
-    if (window.innerWidth >= 860) {
+    /**
+     * use mediaQeury instead of checking for inner width for mobile
+     * thanks to David Tejada for the help https://github.com/david-tejada
+     */
+    const mediaQueryList = window.matchMedia("(min-width: 860px)")
+    if (mediaQueryList.matches) {
       setClose(false)
     }
 
-    const handleResize = () => {
-      window.innerWidth >= 860 ? setClose(false) : setClose(true)
-    }
-
-    window.addEventListener("resize", handleResize)
-
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
+    mediaQueryList.addEventListener("change", mediaQueryList => {
+      mediaQueryList.matches ? setClose(false) : setClose(true)
+    })
   }, [])
 
   function toggleClose() {
