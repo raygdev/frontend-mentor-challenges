@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Product.module.css'
+import ImageSlider from '../ImageSlider/ImageSlider'
 
 function Product(props) {
     const {
@@ -14,7 +15,7 @@ function Product(props) {
   return (
     <main className={styles.wrapper}>
         <div className={styles.product__image__wrapper}>
-            <img className={styles.product__image} src={images[0][0]} alt="product image" />
+            <ImageSlider images={images}/>
         </div>
         <div className={styles.product__info__wrapper}>
             <h2>{special}</h2>
