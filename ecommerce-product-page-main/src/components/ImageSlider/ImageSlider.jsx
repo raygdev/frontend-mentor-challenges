@@ -22,17 +22,25 @@ function ImageSlider({ images, className }) {
   return (
     <div className={styles.image__slider__wrapper}>
       <div className={styles.buttons__wrapper}>
-        <button onClick={backward} className={styles.btn} aria-label="previous image">
+        <button
+          onClick={backward}
+          className={styles.btn}
+          aria-label="previous image"
+        >
           <img aria-hidden={true} src={previousIcon} alt="" />
         </button>
-        <button onClick={forward} className={styles.btn} aria-label="next image">
+        <button
+          onClick={forward}
+          className={styles.btn}
+          aria-label="next image"
+        >
           <img aria-hidden={true} src={nextIcon} alt="" />
         </button>
       </div>
       {images.map((image, i) => {
         return (
           <img
-            aria-hidden={ i !== currentImage }
+            aria-hidden={i !== currentImage}
             className={i === currentImage ? styles.show : styles.hide}
             key={i}
             src={image[0]}
