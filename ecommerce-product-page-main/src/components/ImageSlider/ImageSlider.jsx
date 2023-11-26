@@ -29,13 +29,13 @@ function ImageSlider({ images, className }) {
           <img aria-hidden={true} src={nextIcon} alt="" />
         </button>
       </div>
-      {images.filter((image, i) => {
+      {images.map((image, i) => {
         return (
           <img
-            aria-hidden
+            aria-hidden={ i !== currentImage }
             className={i === currentImage ? styles.show : styles.hide}
             key={i}
-            src={image[1]}
+            src={image[0]}
             alt="product image"
           />
         )
