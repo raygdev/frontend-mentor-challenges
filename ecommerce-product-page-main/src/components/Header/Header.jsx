@@ -5,25 +5,16 @@ import menu from "../../images/icon-menu.svg"
 import logo from "../../images/logo.svg"
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
 import Avatar from "../Avatar/Avatar"
+import useMediaQuery from "../../hooks/useMediaQuery"
 
 function Header(props) {
   const [close, setClose] = useState(true)
+  const [isMobile] = useMediaQuery()
   const buttonRef = useRef(null)
 
   useEffect(() => {
-    /**
-     * use mediaQeury instead of checking for inner width for mobile
-     * thanks to David Tejada for the help https://github.com/david-tejada
-     */
-    const mediaQueryList = window.matchMedia("(min-width: 860px)")
-    if (mediaQueryList.matches) {
-      setClose(false)
-    }
-
-    mediaQueryList.addEventListener("change", mediaQueryList => {
-      mediaQueryList.matches ? setClose(false) : setClose(true)
-    })
-  }, [])
+    isMobile ? setClose(true) : setClose(false)
+  }, [isMobile])
 
   function toggleClose() {
     setClose(prevClose => {
