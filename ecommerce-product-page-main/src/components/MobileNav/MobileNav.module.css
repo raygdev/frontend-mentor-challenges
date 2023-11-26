@@ -81,7 +81,8 @@
     .nav {
         padding: 0;
         color: var(--dark-grayish-blue);
-        overflow-y: visible;
+        overflow-y: auto;
+        width: 100%;
     }
 
     .hide {
