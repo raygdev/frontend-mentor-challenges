@@ -11,7 +11,10 @@ function Header(props) {
   const buttonRef = useRef(null)
 
   useEffect(() => {
-    //use mediaQeury instead of checking for inner width for mobile
+    /**
+     * use mediaQeury instead of checking for inner width for mobile
+     * thanks to David Tejada for the help https://github.com/david-tejada
+     */
     const mediaQueryList = window.matchMedia("(min-width: 860px)")
     if (mediaQueryList.matches) {
       setClose(false)
