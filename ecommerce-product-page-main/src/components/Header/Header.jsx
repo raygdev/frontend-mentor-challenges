@@ -10,23 +10,8 @@ function Header(props) {
   const [close, setClose] = useState(true)
   const buttonRef = useRef(null)
 
-  // useEffect(() => {
-  //   if (window.innerWidth >= 860) {
-  //     setClose(false)
-  //   }
-
-  //   const handleResize = () => {
-  //     window.innerWidth >= 860 ? setClose(false) : setClose(true)
-  //   }
-
-  //   window.addEventListener("resize", handleResize)
-
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize)
-  //   }
-  // }, [])
-
   useEffect(() => {
+    //use mediaQeury instead of checking for inner width for mobile
     const mediaQueryList = window.matchMedia("(min-width: 860px)")
     if (mediaQueryList.matches) {
       setClose(false)
