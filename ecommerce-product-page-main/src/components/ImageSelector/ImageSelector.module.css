@@ -1,0 +1,60 @@
+.modal__btn {
+    display: flex;
+    align-items: center;
+}
+
+.modal__btn img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.thumbnail__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0;
+}
+
+.thumbnail__wrapper img {
+    width: 70px;
+}
+
+.regular,
+.active,
+.modal__btn {
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: inherit;
+}
+
+.regular,
+.active {
+    padding: .2em;
+    transition: opacity 0.35s, border .35s;
+}
+
+
+.active {
+    border-color: var(--orange);  
+}
+
+.active img{
+    opacity: 0.75;
+}
+
+.regular img:hover,
+.regular:hover {
+    opacity: 0.75;
+}
+
+
+.active img,
+.regular img{
+    border-radius: 1em;
+}
+
+

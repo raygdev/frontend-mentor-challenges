@@ -2,6 +2,7 @@ import React from "react"
 import styles from "./Product.module.css"
 import ImageSlider from "../ImageSlider/ImageSlider"
 import useMediaQuery from "../../hooks/useMediaQuery"
+import ImageSelector from "../ImageSelector/ImageSelector"
 
 function Product(props) {
   const [isMobile] = useMediaQuery()
@@ -18,13 +19,7 @@ function Product(props) {
     <main className={styles.wrapper}>
       <div className={styles.product__image__wrapper}>
         {isMobile && <ImageSlider images={images} />}
-        {!isMobile && (
-          <img
-            className={styles.product__image}
-            src={images[0][0]}
-            alt="product image"
-          />
-        )}
+        {!isMobile && <ImageSelector images={images}/>}
       </div>
       <div className={styles.product__info__wrapper}>
         <h2>{special}</h2>
