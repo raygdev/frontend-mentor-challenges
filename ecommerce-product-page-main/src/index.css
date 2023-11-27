@@ -16,6 +16,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   margin: 0;
   font-family: 'Kumbh Sans', sans-serif;
@@ -35,4 +36,10 @@ a  {
 
 button:hover {
   cursor: pointer;
+}
+
+@media (min-width: 860px) {
+  #root {
+    padding: 0 1em;
+  }
 }
