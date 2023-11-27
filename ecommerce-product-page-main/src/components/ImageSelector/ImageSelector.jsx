@@ -23,7 +23,12 @@ function ImageSelector({ images }) {
         aria-label="open modal"
         className={styles.modal__btn}
       >
-        <img id="product-image" className={styles.main__image} src={currentImage} alt="product image" />
+        <img
+          id="product-image"
+          className={styles.main__image}
+          src={currentImage}
+          alt="product image"
+        />
       </button>
       <div className={styles.thumbnail__wrapper}>
         {images.map((image, i) => {
@@ -32,14 +37,9 @@ function ImageSelector({ images }) {
               aria-controls="product-image"
               aria-label="change image"
               onClick={() => handleSetThumbnailIndexAndImage(i)}
-              className={
-                thumbnailIndex === i ? styles.active : styles.regular
-              }
+              className={thumbnailIndex === i ? styles.active : styles.regular}
             >
-              <img
-                src={image[1]}
-                alt="product thumbnail"
-              />
+              <img src={image[1]} alt="product thumbnail" />
             </button>
           )
         })}
