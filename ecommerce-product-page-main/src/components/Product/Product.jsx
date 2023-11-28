@@ -4,7 +4,7 @@ import ImageSlider from "../ImageSlider/ImageSlider"
 import useMediaQuery from "../../hooks/useMediaQuery"
 import ImageSelector from "../ImageSelector/ImageSelector"
 
-function Product(props) {
+function Product({ close, ...props}) {
   const [isMobile] = useMediaQuery()
   const {
     description,
@@ -16,7 +16,7 @@ function Product(props) {
     images
   } = props.data
   return (
-    <main className={styles.wrapper}>
+    <main inert={!close && isMobile && ""} className={styles.wrapper}>
       <div className={styles.product__image__wrapper}>
         {isMobile && <ImageSlider images={images} />}
         {!isMobile && <ImageSelector images={images}/>}

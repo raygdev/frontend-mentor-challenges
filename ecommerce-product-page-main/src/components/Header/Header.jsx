@@ -7,8 +7,7 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart"
 import Avatar from "../Avatar/Avatar"
 import useMediaQuery from "../../hooks/useMediaQuery"
 
-function Header(props) {
-  const [close, setClose] = useState(true)
+function Header({ close, setClose }) {
   const [isMobile] = useMediaQuery()
   const buttonRef = useRef(null)
 
@@ -29,7 +28,7 @@ function Header(props) {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo__wrapper}>
+      <div inert={!close && isMobile && ""} className={styles.logo__wrapper}>
         <button
           aria-expanded={!close}
           aria-controls="navigation"
@@ -43,7 +42,7 @@ function Header(props) {
         <img src={logo} alt="sneakers logo" />
       </div>
       <MobileNav close={close} toggleClose={toggleClose} />
-      <div className={styles.wrapper}>
+      <div inert={!close && isMobile && ""} className={styles.wrapper}>
         <ShoppingCart />
         <Avatar />
       </div>
