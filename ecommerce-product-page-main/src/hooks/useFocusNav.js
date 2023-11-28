@@ -10,7 +10,6 @@ export function useFocusNav(ref, state) {
 
     function handleTabKeyPress(e) {
       if (e.key === "Tab") {
-        console.log("tabbed")
         if (e.shiftKey && document.activeElement === firstElement) {
           e.preventDefault()
           lastElement.focus()
@@ -33,7 +32,6 @@ export function useFocusNav(ref, state) {
     }
 
     if (!state && window.innerWidth <= 860) {
-      console.log("state")
       firstElement.focus()
       ref.current.addEventListener("keydown", functions[0])
       ref.current.addEventListener("keydown", functions[1])
