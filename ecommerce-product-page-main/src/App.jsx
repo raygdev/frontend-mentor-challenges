@@ -7,12 +7,13 @@ import Product from './components/Product/Product'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [close, setClose] = useState(true)
 
   return (
     <>
-      <Header />
-      <Product data={sneakerData}/>
-      <Footer />
+      <Header close={close} setClose={setClose}/>
+      <Product close={close} data={sneakerData}/>
+      <Footer close={close}/>
     </>
   )
 }
