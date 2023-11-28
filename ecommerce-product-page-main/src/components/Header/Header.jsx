@@ -28,7 +28,7 @@ function Header({ close, setClose }) {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo__wrapper}>
+      <div inert={!close && isMobile && ""} className={styles.logo__wrapper}>
         <button
           aria-expanded={!close}
           aria-controls="navigation"
@@ -42,7 +42,7 @@ function Header({ close, setClose }) {
         <img src={logo} alt="sneakers logo" />
       </div>
       <MobileNav close={close} toggleClose={toggleClose} />
-      <div className={styles.wrapper}>
+      <div inert={!close && isMobile && ""} className={styles.wrapper}>
         <ShoppingCart />
         <Avatar />
       </div>
