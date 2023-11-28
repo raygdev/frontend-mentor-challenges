@@ -23,7 +23,7 @@ export function useFocusNav(ref, state) {
 
     function handleEscapeKeyPress(e) {
       if (e.key === "Escape") {
-        props.toggleClose()
+        firstElement.click()
       }
     }
 
