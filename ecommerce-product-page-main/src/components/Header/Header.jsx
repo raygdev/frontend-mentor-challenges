@@ -7,8 +7,7 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart"
 import Avatar from "../Avatar/Avatar"
 import useMediaQuery from "../../hooks/useMediaQuery"
 
-function Header(props) {
-  const [close, setClose] = useState(true)
+function Header({ close, setClose }) {
   const [isMobile] = useMediaQuery()
   const buttonRef = useRef(null)
 

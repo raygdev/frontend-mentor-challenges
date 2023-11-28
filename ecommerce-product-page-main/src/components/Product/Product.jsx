@@ -4,7 +4,7 @@ import ImageSlider from "../ImageSlider/ImageSlider"
 import useMediaQuery from "../../hooks/useMediaQuery"
 import ImageSelector from "../ImageSelector/ImageSelector"
 
-function Product(props) {
+function Product({ close, ...props}) {
   const [isMobile] = useMediaQuery()
   const {
     description,
