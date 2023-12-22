@@ -33,8 +33,7 @@
 
 .regular,
 .active {
-    padding: .2em;
-    transition: opacity 0.35s, border .35s;
+    transition: opacity 0.35s ease, border .35s;
 }
 
 
@@ -50,11 +49,3 @@
 .regular:hover {
     opacity: 0.75;
 }
-
-
-.active img,
-.regular img{
-    border-radius: 1em;
-}
-
-
