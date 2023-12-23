@@ -16,7 +16,7 @@ function Product({ close, ...props}) {
     images
   } = props.data
   return (
-    <main inert={!close && isMobile && ""} className={styles.wrapper}>
+    <main inert={!close && isMobile ? "" : undefined} className={styles.wrapper}>
       <div className={styles.product__image__wrapper}>
         {isMobile && <ImageSlider images={images} />}
         {!isMobile && <ImageSelector images={images}/>}
