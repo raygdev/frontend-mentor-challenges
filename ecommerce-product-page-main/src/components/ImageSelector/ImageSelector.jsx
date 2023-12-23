@@ -33,14 +33,16 @@ function ImageSelector({ images }) {
       <div className={styles.thumbnail__wrapper}>
         {images.map((image, i) => {
           return (
-            <button
-              aria-controls="product-image"
-              aria-label="change image"
-              onClick={() => handleSetThumbnailIndexAndImage(i)}
-              className={thumbnailIndex === i ? styles.active : styles.regular}
-            >
-              <img src={image[1]} alt="product thumbnail" />
-            </button>
+            <div key={i}>
+              <button
+                aria-controls="product-image"
+                aria-label="change image"
+                onClick={() => handleSetThumbnailIndexAndImage(i)}
+                className={thumbnailIndex === i ? styles.active : styles.regular}
+              >
+                <img src={image[1]} alt="product thumbnail" />
+              </button>
+            </div>
           )
         })}
       </div>
